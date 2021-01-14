@@ -142,7 +142,7 @@
 						</div>
 						<div class="inner">
 							<div id="tip">
-								<p class="intervalTime">There are only {{days}} days left before the entrance examination on December 26, 2021</p>
+								<p class="intervalTime">There are only {{days}} days left before the entrance examination on December 26, 2021.</p>
 							</div>
 						</div>
 					</section>
@@ -178,24 +178,24 @@
 									<ul class="contact">
 										<li>
 											<h3>Address</h3>
-											<span>12345 Somewhere Road #654<br />
-											Nashville, TN 00000-0000<br />
-											USA</span>
+											<ul class="contact">
+												<li><span class="icon-map"></span>Chongqing in China</li>
+											</ul>
 										</li>
 										<li>
 											<h3>Email</h3>
-											<a href="#">user@untitled.tld</a>
+											<a href="https://mail.163.com/">caifls@163.com</a>
 										</li>
 										<li>
 											<h3>Phone</h3>
-											<span>(000) 000-0000</span>
+											<span>(+86) 00000000</span>
 										</li>
 										<li>
 											<h3>Social</h3>
 											<ul class="icons">
 												<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
 												<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-												<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+												<li><a href="https://github.com/SE-Nickjackson/" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
 												<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
 												<li><a href="#" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
 											</ul>
@@ -258,7 +258,9 @@
 					console.log(cdDay);
 					endDay = new Date(aimDay);
 					startDay = new Date(cdDay);
+					//相减得到相差的毫秒，做除法得到天数
 					iDay = parseInt((endDay-startDay)/1000/60/60/24);
+					//因为计算使用26日当天，所以要减一天。
 					return iDay-1+'';
 				}
 			</script>

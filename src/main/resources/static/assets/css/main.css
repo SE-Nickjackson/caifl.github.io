@@ -3907,3 +3907,26 @@ input, select, textarea {
 			}
 
 		}
+/**
+icon
+ */
+.icon-map{
+
+	color:#333;
+
+	width:30px;height:30px;
+
+	margin:30px auto;
+
+	border:solid 2px currentColor;
+
+	border-radius:16px 16px 16px 0;
+
+	-webkit-transform:rotate(-45deg);
+
+	-moz-transform: rotate(-45deg);
+
+	transform:rotate(-45deg);
+
+}
+
