@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:http="http://www.w3.org/1999/xhtml">
+<div th:fragment="blogHeader">
+    <footer id="header" class="wrapper style1-alt">
+
+        <link rel="stylesheet" href="../static/assets/css/main.css" th:href="@{/assets/css/main.css}"/>
+        <link rel="stylesheet" href="../static/assets/css/clock.css" th:href="@{/assets/css/clock.css}"/>
+    </footer>
+</div>
+
+<div th:fragment="blogHeader">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>caifl's blog</title>
+        <link href="bootstrap/css/bootstrap.min.css" th:href="@{blog/bootstrap/css/bootstrap.min.css}" rel="stylesheet">
+        <link href="css/cl-css.css" th:href="@{/blog/css/cl-css.css}" rel="stylesheet">
+        <link href="font-awesome/css/font-awesome.min.css" th:href="@{/blog/font-awesome/css/font-awesome.min.css}"
+              rel="stylesheet">
+        <link rel="stylesheet" href="highlight/styles/railscasts.css"
+              th:href="@{/blog/highlight/styles/railscasts.css}">
+    </head>
+</div>
+</html>

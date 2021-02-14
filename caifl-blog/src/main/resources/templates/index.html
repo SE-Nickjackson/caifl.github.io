@@ -1,0 +1,266 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<title>Caifl' Blog</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="../static/assets/css/main.css" th:href="@{/assets/css/main.css}" />
+		<link rel="stylesheet" href="../static/assets/css/clock.css" th:href="@{/assets/css/clock.css}" />
+		<noscript><link rel="stylesheet" href="../static/assets/css/noscript.css" th:href="@{/assets/css/noscript.css}"/></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Sidebar -->
+			<section id="sidebar">
+				<div class="inner">
+					<nav>
+						<ul>
+							<li><a href="#intro">Welcome</a></li>
+							<li><a href="#one">Who I am</a></li>
+							<li><a href="#two">What I do</a></li>
+							<li><a href="#three">When is it now</a></li>
+							<li><a href="#four">Get in touch</a></li>
+						</ul>
+					</nav>
+				</div>
+			</section>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Intro -->
+					<section id="intro" class="wrapper style1 fullscreen fade-up">
+						<div class="inner">
+							<h1>Caifl's Blog</h1>
+							<p>Here, you can see Nick Jackson's interesting project <a href="https://github.com/SE-Nickjackson/">results and research</a>.</p>
+							<ul class="actions">
+								<li><a href="#" th:href="@{/blog/blog}" class="button scrolly">Learn more</a></li>
+							</ul>
+						</div>
+					</section>
+
+				<!-- One -->
+					<section id="one" class="wrapper style2 spotlights">
+						<section>
+							<a href="#" class="image"><img src="../static/images/pic01.jpg" alt="" data-position="center center" /></a>
+							<div class="content">
+								<div class="inner">
+									<h2>An University Student</h2>
+									<p>A Chinese college student with a strong interest in programming and artificial intelligence, as well as a freelancer and deep learning enthusiast.</p>
+									<ul class="actions">
+										<li><a href="generic.html" th:href="@{/generic}" class="button">Learn more</a></li>
+									</ul>
+								</div>
+							</div>
+						</section>
+						<section>
+							<a href="#" class="image"><img src="../static/images/pic02.jpg" alt="" data-position="top center" /></a>
+							<div class="content">
+								<div class="inner">
+									<h2>A Game Lover</h2>
+									<p>A game enthusiast who wants to try all kinds of games. Maybe we can team up and play together and I'm also interested in game programming.</p>
+									<ul class="actions">
+										<li><a href="generic.html"  th:href="@{/generic}" class="button">Learn more</a></li>
+									</ul>
+								</div>
+							</div>
+						</section>
+						<section>
+							<a href="#" class="image"><img src="../static/images/pic03.jpg" alt="" data-position="25% 25%" /></a>
+							<div class="content">
+								<div class="inner">
+									<h2>A Kind Man</h2>
+									<p>Maybe we can make friends, play games together, code together and do some interesting researches together.</p>
+									<ul class="actions">
+										<li><a href="generic.html" th:href="@{/generic}"  class="button">Learn more</a></li>
+									</ul>
+								</div>
+							</div>
+						</section>
+					</section>
+
+				<!-- Two -->
+					<section id="two" class="wrapper style3 fade-up">
+						<div class="inner">
+							<h2>What I do</h2>
+							<p>Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus, lacus eget hendrerit bibendum, urna est aliquam sem, sit amet imperdiet est velit quis lorem.</p>
+							<div class="features">
+								<section>
+									<span class="icon solid major fa-code"></span>
+									<h3>Lorem ipsum amet</h3>
+									<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
+								</section>
+								<section>
+									<span class="icon solid major fa-lock"></span>
+									<h3>Aliquam sed nullam</h3>
+									<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
+								</section>
+								<section>
+									<span class="icon solid major fa-cog"></span>
+									<h3>Sed erat ullam corper</h3>
+									<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
+								</section>
+								<section>
+									<span class="icon solid major fa-desktop"></span>
+									<h3>Veroeros quis lorem</h3>
+									<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
+								</section>
+								<section>
+									<span class="icon solid major fa-link"></span>
+									<h3>Urna quis bibendum</h3>
+									<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
+								</section>
+								<section>
+									<span class="icon major fa-gem"></span>
+									<h3>Aliquam urna dapibus</h3>
+									<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
+								</section>
+							</div>
+							<ul class="actions">
+								<li><a href="generic.html" th:href="@{/generic}" class="button">Learn more</a></li>
+							</ul>
+						</div>
+					</section>
+
+				<!-- Three -->
+					<section id="three" class="wrapper style2 fade-up">
+						<div class="inner">
+							<h2>When is it now</h2>
+							<hr style="color: black;height: 1px;">
+						</div>
+
+						<div class="inner">
+							<div id="clock">
+								<p class="date">{{ date }}</p>
+								<p class="time">{{ time }}</p>
+							</div>
+						</div>
+						<div class="inner">
+							<div id="tip">
+								<p class="intervalTime">There are only <span>{{days}}</span> days left before the entrance examination on December 26, 2021.</p>
+							</div>
+						</div>
+					</section>
+
+				<!-- four -->
+					<section id="four" class="wrapper style1 fade-up">
+						<div class="inner">
+							<h2>Get in touch</h2>
+							<p>Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus, lacus eget hendrerit bibendum, urna est aliquam sem, sit amet imperdiet est velit quis lorem.</p>
+							<div class="split style1">
+								<section>
+									<form method="post" action="#">
+										<div class="fields">
+											<div class="field half">
+												<label for="name">Name</label>
+												<input type="text" name="name" id="name" />
+											</div>
+											<div class="field half">
+												<label for="email">Email</label>
+												<input type="text" name="email" id="email" />
+											</div>
+											<div class="field">
+												<label for="message">Message</label>
+												<textarea name="message" id="message" rows="5"></textarea>
+											</div>
+										</div>
+										<ul class="actions">
+											<li><a href="" class="button submit">Send Message</a></li>
+										</ul>
+									</form>
+								</section>
+								<section>
+									<ul class="contact">
+										<li>
+											<h3>Address</h3>
+											<ul class="contact">
+												<li><span class="icon-map"></span>Chongqing in China</li>
+											</ul>
+										</li>
+										<li>
+											<h3>Email</h3>
+											<a href="https://mail.163.com/">caifls@163.com</a>
+										</li>
+										<li>
+											<h3>Phone</h3>
+											<span>(+86) 00000000</span>
+										</li>
+										<li>
+											<h3>Social</h3>
+											<ul class="icons">
+												<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+												<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+												<li><a href="https://github.com/SE-Nickjackson/" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+												<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+												<li><a href="#" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+											</ul>
+										</li>
+									</ul>
+								</section>
+							</div>
+						</div>
+					</section>
+
+			</div>
+
+		<!-- Footer -->
+		<div th:replace="footer :: footer"></div>
+
+
+		<!-- Scripts -->
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.4/vue.min.js"></script>
+			<script>
+				var clock = new Vue({
+					el: '#clock',
+					data: {
+						time: '123',
+						date: '0',
+					}
+				});
+
+				var tip = new Vue({
+					el: '#tip',
+					data:{
+						days: '0'
+					}
+				})
+				var week = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'];
+				var timerID = setInterval(updateTime, 1000);
+
+				function updateTime() {
+					var cd = new Date();
+					clock.time = zeroPadding(cd.getHours(), 2) + ':' + zeroPadding(cd.getMinutes(), 2) + ':' + zeroPadding(cd.getSeconds(), 2);
+					clock.date = zeroPadding(cd.getFullYear(), 4) + '-' + zeroPadding(cd.getMonth() + 1, 2) + '-' + zeroPadding(cd.getDate(), 2) + ' ' + week[cd.getDay()];
+					tip.days = getIntervalTime()+''
+				};
+
+				function zeroPadding(num, digit) {
+					var zero = '';
+					for (var i = 0; i < digit; i++) {
+						zero += '0';
+					}
+					return (zero + num).slice(-digit);
+				}
+				function getIntervalTime(){
+					var cd = new Date();
+					var aimDay = '2021-12-26';
+					var cdDay = cd.getFullYear()+'-'+cd.getMonth()+1+'-'+cd.getDate();
+					endDay = new Date(aimDay);
+					startDay = new Date(cdDay);
+					//相减得到相差的毫秒，做除法得到天数
+					iDay = parseInt((endDay-startDay)/1000/60/60/24);
+					//因为计算使用26日当天，所以要减一天。
+					return iDay-1+'';
+				}
+			</script>
+			<script src="../static/assets/js/vue.js" th:src="@{/assets/js/vue.js}"></script>
+			<script src="../static/assets/js/jquery.min.js" th:src="@{/assets/js/jquery.min.js}"></script>
+			<script src="../static/assets/js/jquery.scrollex.min.js" th:src="@{/assets/js/jquery.scrollex.min.js}"></script>
+			<script src="../static/assets/js/jquery.scrolly.min.js" th:src="@{/assets/js/jquery.scrolly.min.js}"></script>
+			<script src="../static/assets/js/browser.min.js" th:src="@{/assets/js/browser.min.js}"></script>
+			<script src="../static/assets/js/breakpoints.min.js" th:src="@{/assets/js/breakpoints.min.js}"></script>
+			<script src="../static/assets/js/util.js" th:src="@{/assets/js/util.js}"></script>
+			<script src="../static/assets/js/main.js" th:src="@{/assets/js/main.js}"></script>
+
+	</body>
+</html>
