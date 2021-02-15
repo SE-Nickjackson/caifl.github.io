@@ -1,0 +1,25 @@
+<html>
+<head>
+</head>
+<body>
+<button id="a1">点击</button>
+<script>
+    function test(){
+        document.getElementById("a1").onclick=function(){
+            var inputObj=document.createElement('input')
+            inputObj.setAttribute('id','_ef');
+            inputObj.setAttribute('type','file');
+            inputObj.setAttribute("style",'visibility:hidden');
+            document.body.appendChild(inputObj);
+            inputObj.click();
+            inputObj.value;
+
+        };
+
+        //下面这种写法是不对的
+        //document.getElementById("a1").οnclick="alert('this is a1');";
+    }
+    test();
+</script>
+</body>
+</html>

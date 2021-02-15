@@ -68,22 +68,45 @@
                     "link", "reference-link", "image", "code", "preformatted-text",
                     "code-block", "table", "datetime", "emoji", "html-entities", "pagebreak", "|",
                     "goto-line", "watch", "preview", "fullscreen", "clear", "search", "|",
-                    "help", "info", "releaseIcon"]
+                    "help", "info", "releaseIcon", "importMdIcon"]
             },
 
             /*自定义功能按钮，下面我自定义了2个，一个是发布，一个是返回首页*/
             toolbarIconTexts: {
                 releaseIcon: "<span bgcolor=\"gray\" >发布</span>",
+                importMdIcon: "<span bgcolor=\"gray\" >导入</span>",
                 // index : "<span bgcolor=\"red\">返回首页</span>",
+
             },
 
             /*给自定义按钮指定回调函数*/
             toolbarHandlers: {
                 releaseIcon: function (cm, icon, cursor, selection) {
-                    //表单提交
-                    mdEditorForm.method = "post";
-                    mdEditorForm.action = "/article/addArticle";//提交至服务器的路径
-                    mdEditorForm.submit();
+                    //确认是否发布
+                    const bool = confirm("确认发布？");
+                    if(bool===true){
+                        //表单提交
+                        mdEditorForm.method = "post";
+                        mdEditorForm.action = "/article/addArticle";//提交至服务器的路径
+                        mdEditorForm.submit();
+                    }
+                    else{
+                        console.log("取消发布")
+                    }
+
+
+                },
+                importMdIcon: function (cm, icon, cursor, selection){
+                    var inputObj=document.createElement('input')
+                    inputObj.setAttribute('id','_ef');
+                    inputObj.setAttribute('type','file');
+                    inputObj.setAttribute("style",'visibility:hidden');
+                    document.body.appendChild(inputObj);
+                    inputObj.click();
+                    inputObj.value;
+                    var textA = document.getElementById('content');
+                    console.log(inputObj.value)
+                    textA.textContent = inputObj.value;
                 }
                 // index : function(){
                 //     window.location.href = '/index';

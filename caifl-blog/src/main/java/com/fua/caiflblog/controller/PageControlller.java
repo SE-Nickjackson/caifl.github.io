@@ -35,4 +35,9 @@ public class PageControlller {
     public String blog(){
         return "blog-index";
     }
+
+    @RequestMapping("/blog-list")
+    public String blogList(){
+        return "blog-list";
+    }
 }

@@ -1,6 +1,8 @@
 package com.fua.caifladmin.controller;
 
 import com.alibaba.fastjson.JSONObject;
+import com.fua.caifladmin.entity.Category;
+import com.fua.caifladmin.service.CategoryService;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.fua.caifladmin.entity.Article;
@@ -32,6 +34,8 @@ public class ArticleController {
      */
     @Resource
     private ArticleService articleService;
+    @Resource
+    private CategoryService categoryService;
 
     /**
      * 跳转到编辑页面

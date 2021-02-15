@@ -23,6 +23,14 @@ public class Article implements Serializable {
     */
     private String title;
     /**
+     * 文章的标签
+     */
+    private String label;
+    /**
+     * 文章的类别
+     */
+    private String category;
+    /**
     * 文章的内容
     */
     private String content;
@@ -55,9 +63,23 @@ public class Article implements Serializable {
     public String getContent() {
         return content;
     }
-
     public void setContent(String content) {
         this.content = content;
     }
 
+    public String getLabel() {
+        return label;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setLabel(String label) {
+        this.label = label;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
 }

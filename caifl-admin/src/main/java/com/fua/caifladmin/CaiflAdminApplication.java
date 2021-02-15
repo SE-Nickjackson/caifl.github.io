@@ -9,5 +9,4 @@ public class CaiflAdminApplication {
     public static void main(String[] args) {
         SpringApplication.run(CaiflAdminApplication.class, args);
     }
-
 }

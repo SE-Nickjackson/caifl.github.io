@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.fua.caifladmin.dao.CategoryDao">
+
+    <resultMap type="com.fua.caifladmin.entity.Category" id="CategoryMap">
+        <result property="id" column="id" jdbcType="INTEGER"/>
+        <result property="categoryName" column="category_name" jdbcType="VARCHAR"/>
+        <result property="parentId" column="parent_id" jdbcType="INTEGER"/>
+        <result property="parentIdPath" column="parent_id_path" jdbcType="VARCHAR"/>
+        <result property="isHot" column="is_hot" jdbcType="INTEGER"/>
+        <result property="isShow" column="is_show" jdbcType="INTEGER"/>
+        <result property="description" column="description" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <!--根据id查询单个类别-->
+    <select id="getCategoryById" resultMap="CategoryMap">
+        select
+            id, category_name, parent_id, parent_id_path, is_hot, is_show, description
+        from category
+        where id = #{id}
+    </select>
+
+
+    <!--根据name查询单个类别-->
+    <select id="getCategoryByName" resultMap="CategoryMap">
+        select
+            id, category_name, parent_id, parent_id_path, is_hot, is_show, description
+        from category
+        where category_name = #{categoryName}
+    </select>
+
+
+    <!--查询所有分类-->
+    <select id="queryCategories" resultMap="CategoryMap">
+        select
+        id, category_name, parent_id, parent_id_path, is_hot, is_show, description
+        from category
+        <where>
+            <if test="id != null">
+                and id = #{id}
+            </if>
+            <if test="category_name != null and category_name != ''">
+                and category_name = #{categoryName}
+            </if>
+            <if test="parent_id != null and parent_id != ''">
+                and parent_id = #{parentId}
+            </if>
+            <if test="parent_id_path != null and parent_id_path != ''">
+                and parent_id_path = #{parentIdPath}
+            </if>
+            <if test="is_hot != null and is_hot != ''">
+                and is_hot = #{isHot}
+            </if>
+            <if test="is_show != null and is_show != ''">
+                and is_show = #{isShow}
+            </if>
+            <if test="description != null and description != ''">
+                and description = #{description}
+            </if>
+        </where>
+    </select>
+
+    <!--添加文章-->
+    <insert id="addCategory" keyProperty="id" useGeneratedKeys="true">
+        insert into category(category_name, parent_id, parent_id_path, is_hot, is_show, description)
+        values (#{categoryName}, #{parentId}, #{parentIdPath}, #{isHot}, #{isShow}, #{description})
+    </insert>
+
+    <update id="updateCategory" parameterType="com.fua.caifladmin.entity.Category">
+        update category
+        <set>
+            <if test="categoryName != null and categoryName != ''">
+                category_name = #{categoryName},
+            </if>
+            <if test="parentId != null and parentId != ''">
+                parent_id = #{parentId},
+            </if>
+            <if test="parentIdPath != null">
+                parent_id_path = #{parentIdPath},
+            </if>
+            <if test="isHot != null">
+                is_hot = #{isHot},
+            </if>
+            <if test="isShow != null">
+                is_show = #{isShow},
+            </if>
+            <if test="description != null and description != ''">
+                description = #{description},
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+
+
+    <!--通过id删除文章-->
+    <delete id="deleteCategoryById">
+        delete from category where id = #{id}
+    </delete>
+
+</mapper>

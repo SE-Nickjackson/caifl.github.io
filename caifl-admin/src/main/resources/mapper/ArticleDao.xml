@@ -6,22 +6,25 @@
         <result property="id" column="id" jdbcType="INTEGER"/>
         <result property="author" column="author" jdbcType="VARCHAR"/>
         <result property="title" column="title" jdbcType="VARCHAR"/>
+        <result property="label" column="label" jdbcType="VARCHAR"/>
+        <result property="category" column="category" jdbcType="INTEGER"/>
         <result property="content" column="content" jdbcType="VARCHAR"/>
     </resultMap>
 
     <!--根据id查询单个文章-->
     <select id="getArticleById" resultMap="ArticleMap">
         select
-               id, author, title, content
+               id, author, title, label, category, content
         from article
         where id = #{id}
     </select>
 
 
+
     <!--查询所有文章-->
     <select id="queryArticles" resultMap="ArticleMap">
         select
-        id, author, title, content
+        id, author, title, label, category, content
         from article
         <where>
             <if test="id != null">
@@ -29,6 +32,12 @@
             </if>
             <if test="author != null and author != ''">
                 and author = #{author}
+            </if>
+            <if test="title != null and title != ''">
+                and title = #{title}
+            </if>
+            <if test="category != null and category != ''">
+                and category = #{category}
             </if>
             <if test="title != null and title != ''">
                 and title = #{title}
@@ -41,9 +50,32 @@
 
     <!--添加文章-->
     <insert id="addArticle" keyProperty="id" useGeneratedKeys="true">
-        insert into article(author, title, content)
-        values (#{author}, #{title}, #{content})
+        insert into article(author, title, label, category, content)
+        values (#{author}, #{title}, #{label}, #{category}, #{content})
     </insert>
+    
+    <!--更新文章-->
+    <update id="updateArticle" parameterType="com.fua.caifladmin.entity.Article">
+        update article
+        <set>
+            <if test="author != null and author != ''">
+                author = #{author},
+            </if>
+            <if test="title != null and title != ''">
+                title = #{title},
+            </if>
+            <if test="label != null">
+                label = #{label},
+            </if>
+            <if test="category != null">
+                label = #{category},
+            </if>
+            <if test="content != null">
+                is_hot = #{content},
+            </if>
+        </set>
+        where id = #{id}
+    </update>
 
 
     <!--通过id删除文章-->
