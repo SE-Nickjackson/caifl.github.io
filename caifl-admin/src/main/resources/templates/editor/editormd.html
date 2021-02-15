@@ -10,6 +10,7 @@
     <!--Editor.md-->
     <link rel="stylesheet" th:href="@{/editormd/css/style.css}"/>
     <link rel="stylesheet" th:href="@{/editormd/css/editormd.css}"/>
+    <link rel="stylesheet" th:href="@{/lib/layui/css/layui.css}"/>
     <link rel="shortcut icon" href="https://pandao.github.io/editor.md/favicon.ico" type="image/x-icon"/>
 </head>
 <body>
@@ -17,12 +18,29 @@
     <div class="layui-row layui-col-space15">
         <div class="layui-col-md12">
             <!--博客表单-->
-            <form name="mdEditorForm" >
-                <div class="">
-                    <span>标题：<input type="text" name="title"></span>
-                    <span>标签：<input type="text" name="label"></span>
-                    <span>类别：<input type="text" name="category"></span>
-                </div>
+            <form name="mdEditorForm" class="layui-col-md12">
+                    <div class="layui-col-md4 layui-col-lg4 layui-col-sm4">
+                        标题：<input type="text" name="title">
+                    </div>
+                    <div class="layui-col-md4 layui-col-lg4 layui-col-sm4">
+                        标签：<input type="text" name="title">
+                    </div>
+                    <div class="layui-col-md4 layui-col-lg4 layui-col-sm4">
+                        类别：
+                        <select>
+                            <option value="默认">默认</option>
+                            <option value="SpringBoot">SpringBoot</option>
+                            <option value="opel">Opel</option>
+                            <option value="audi">Audi</option>
+                        </select>
+                    </div>
+
+
+<!--                <div class="">-->
+<!--                    <span>标题：<input type="text" name="title"></span>-->
+<!--                    <span>标签：<input type="text" name="label"></span>-->
+<!--                    <span>类别：<select></select></span>-->
+<!--                </div>-->
                 <input type="text" name="author" th:value="${session.user.username}" hidden>
                 <div id="article-content">
                     <textarea name="content" id="content" style="display:none;"></textarea>

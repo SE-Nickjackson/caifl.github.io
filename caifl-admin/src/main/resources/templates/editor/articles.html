@@ -40,22 +40,22 @@
                 <div class="layui-card-body ">
                     <table class="layui-table layui-form">
                         <thead>
-                        <tr >
-                            <th style="text-align: center">ID</th>
-                            <th>文章作者</th>
-                            <th>文章标题</th>
-                            <th>类别</th>
-                            <th>标签</th>
-                            <th>操作</th>
+                        <tr class="layui-col-md12 layui-col-lg12 layui-col-sm12">
+                            <th class="layui-col-md2 layui-col-lg2 layui-col-sm2" style="text-align: center">ID</th>
+                            <th  class="layui-col-md2 layui-col-lg2 layui-col-sm2" >文章作者</th>
+                            <th class="layui-col-md2 layui-col-lg2 layui-col-sm2" >文章标题</th>
+                            <th class="layui-col-md2 layui-col-lg2 layui-col-sm2" >类别</th>
+                            <th class="layui-col-md2 layui-col-lg2 layui-col-sm2" >标签</th>
+                            <th class="layui-col-md2 layui-col-lg2 layui-col-sm2" >操作</th>
                         </thead>
                         <tbody>
-                        <tr th:each="article:${page.list}">
-                            <td th:text="${article.id}"></td>
-                            <td th:text="${article.author}"></td>
-                            <td th:text="${article.title}"></td>
-                            <td th:text="${article.category}"></td>
-                            <td th:text="${article.label}"></td>
-                            <td class="td-manage">
+                        <tr class="layui-col-md12 layui-col-lg12 layui-col-sm12"  th:each="article:${page.list}">
+                            <td class="layui-col-md2 layui-col-lg2 layui-col-sm2"  th:text="${article.id}"></td>
+                            <td class="layui-col-md2 layui-col-lg2 layui-col-sm2"  th:text="${article.author}"></td>
+                            <td class="layui-col-md2 layui-col-lg2 layui-col-sm2"  th:text="${article.title}"></td>
+                            <td class="layui-col-md2 layui-col-lg2 layui-col-sm2"  th:text="${article.category}"></td>
+                            <td class="layui-col-md2 layui-col-lg2 layui-col-sm2"  th:text="${article.label}"></td>
+                            <td class="layui-col-md2 layui-col-lg2 layui-col-sm2 td-manage">
                                 <!--<a title="查看" th:href="@{'/article/'+${article.id}}">-->
                                 <a title="查看" th:value="${article.id}" onclick="xadmin.open2('查看文章','/article/',1200,800,null,this)">
                                     <i class="layui-icon">&#xe63c;</i>
