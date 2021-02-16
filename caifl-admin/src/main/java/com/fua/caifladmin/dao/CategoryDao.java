@@ -14,7 +14,7 @@ import java.util.List;
 @Mapper
 public interface CategoryDao {
 
-    Category getCategoryById(Integer id);
+    Category getCategoryById(Integer catId);
 
     Category getCategoryByName(String categoryName);
 
@@ -22,7 +22,7 @@ public interface CategoryDao {
 
     int addCategory(Category category);
 
-    int deleteCategoryById(Integer id);
+    int deleteCategoryById(Integer catId);
 
     int updateCategory(Category category);
 

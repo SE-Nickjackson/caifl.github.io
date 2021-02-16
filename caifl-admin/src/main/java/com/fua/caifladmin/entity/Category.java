@@ -10,7 +10,7 @@ import java.io.Serializable;
  **/
 public class Category implements Serializable {
     private static final long serialVersionUID = -72349542952698496L;
-    private Integer id;
+    private Integer catId;
     private String categoryName;
     private Integer parentId;
     private String parentIdPath;
@@ -22,8 +22,8 @@ public class Category implements Serializable {
         return serialVersionUID;
     }
 
-    public Integer getId() {
-        return id;
+    public Integer getCatId() {
+        return catId;
     }
 
     public String getCategoryName() {
@@ -50,6 +50,10 @@ public class Category implements Serializable {
         return description;
     }
 
+
+    public void setCatId(Integer catId) {
+        this.catId = catId;
+    }
 
     public void setCategoryName(String categoryName) {
         this.categoryName = categoryName;

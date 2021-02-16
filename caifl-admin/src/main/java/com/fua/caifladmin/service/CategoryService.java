@@ -12,7 +12,7 @@ import java.util.List;
  **/
 public interface CategoryService {
 
-    Category getCategoryById(Integer id);
+    Category getCategoryById(Integer catId);
 
     Category getCategoryByName(String categoryName);
 
@@ -20,7 +20,7 @@ public interface CategoryService {
 
     int addCategory(Category category);
 
-    int deleteCategoryById(Integer id);
+    int deleteCategoryById(Integer catId);
 
     int updateCategory(Category category);
 

@@ -20,8 +20,8 @@ public class CategoryServiceImpl implements CategoryService {
     private CategoryDao categoryDao;
 
     @Override
-    public Category getCategoryById(Integer id) {
-        return categoryDao.getCategoryById(id);
+    public Category getCategoryById(Integer catId) {
+        return categoryDao.getCategoryById(catId);
     }
 
     @Override
@@ -40,8 +40,8 @@ public class CategoryServiceImpl implements CategoryService {
     }
 
     @Override
-    public int deleteCategoryById(Integer id) {
-        return categoryDao.deleteCategoryById(id);
+    public int deleteCategoryById(Integer catId) {
+        return categoryDao.deleteCategoryById(catId);
     }
 
     @Override
