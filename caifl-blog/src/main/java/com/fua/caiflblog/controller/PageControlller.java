@@ -30,14 +30,4 @@ public class PageControlller {
         return "generic";
     }
 
-
-    @RequestMapping("/blog")
-    public String blog(){
-        return "blog-index";
-    }
-
-    @RequestMapping("/blog-list")
-    public String blogList(){
-        return "blog-list";
-    }
 }

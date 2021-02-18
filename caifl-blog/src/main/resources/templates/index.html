@@ -137,7 +137,7 @@
 						</div>
 						<div class="inner">
 							<div id="tip">
-								<p class="intervalTime">There are only <span>{{days}}</span> days left before the entrance examination on December 26, 2021.</p>
+								<p class="intervalTime">There are only <span>{{days}}</span> days <span>{{hours}}</span> hours <span>{{minutes}}</span> minutes <span>{{seconds}}</span> seconds left before the entrance examination on December 26, 2021.</p>
 							</div>
 						</div>
 					</section>
@@ -221,7 +221,10 @@
 				var tip = new Vue({
 					el: '#tip',
 					data:{
-						days: '0'
+						days: '0',
+						hours: '0',
+						minutes: '0',
+						seconds: '0'
 					}
 				})
 				var week = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'];
@@ -231,8 +234,13 @@
 					var cd = new Date();
 					clock.time = zeroPadding(cd.getHours(), 2) + ':' + zeroPadding(cd.getMinutes(), 2) + ':' + zeroPadding(cd.getSeconds(), 2);
 					clock.date = zeroPadding(cd.getFullYear(), 4) + '-' + zeroPadding(cd.getMonth() + 1, 2) + '-' + zeroPadding(cd.getDate(), 2) + ' ' + week[cd.getDay()];
-					tip.days = getIntervalTime()+''
-				};
+					var timeL = getIntervalTime()
+					tip.days = timeL[0]
+					tip.hours = timeL[1]
+					tip.minutes = timeL[2]
+					tip.seconds = timeL[3]
+
+				}
 
 				function zeroPadding(num, digit) {
 					var zero = '';
@@ -242,15 +250,21 @@
 					return (zero + num).slice(-digit);
 				}
 				function getIntervalTime(){
-					var cd = new Date();
-					var aimDay = '2021-12-26';
-					var cdDay = cd.getFullYear()+'-'+cd.getMonth()+1+'-'+cd.getDate();
-					endDay = new Date(aimDay);
-					startDay = new Date(cdDay);
+					var nowDate = new Date();
+					console.log(nowDate.getTime())
+					endDay = new Date('2021/12/26');
+					// console.log(date1.getTime())
+					// console.log(endDay.getTime())
 					//相减得到相差的毫秒，做除法得到天数
-					iDay = parseInt((endDay-startDay)/1000/60/60/24);
+					mins = endDay.getTime()-nowDate.getTime()
+					iDay = parseInt((mins)/1000/60/60/24);
+					iHour = parseInt((mins-1000*60*60*24*iDay)/1000/60/60)
+					iMinute = parseInt((mins-1000*60*60*24*iDay-1000*60*60*iHour)/1000/60)
+					iSecond = parseInt((mins-1000*60*60*24*iDay-1000*60*60*iHour-iMinute*1000*60)/1000)+1
+					console.log("iDay: ")
+					console.log(iDay)
 					//因为计算使用26日当天，所以要减一天。
-					return iDay-1+'';
+					return [iDay+'', iHour+'', iMinute+'', iSecond+''];
 				}
 			</script>
 			<script src="../static/assets/js/vue.js" th:src="@{/assets/js/vue.js}"></script>

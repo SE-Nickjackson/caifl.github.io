@@ -1,6 +1,6 @@
 spring:
   application:
-    name: caifl-blog
+    name: caifl-admin
   output:
     ansi:
       enabled: always #高亮输出日志
@@ -22,7 +22,7 @@ server:
     threads:
       min-spare: 25
       max: 300
-  port: 9000
+  port: 8080
 
 
 mybatis:

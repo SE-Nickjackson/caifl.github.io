@@ -58,13 +58,13 @@
                         </ol>
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                                <img class="d-block w-100" src="temporary-img/recommended.jpg" th:href="@{/blog/temporary-img/recommended.jpg}" alt="First slide">
+                                <img class="d-block w-100" src="temporary-img/it1.jpg" th:href="@{/blog/temporary-img/it1.jpg}" alt="First slide">
                             </div>
                             <div class="carousel-item">
-                                <img class="d-block w-100" src="temporary-img/recommended.jpg" th:href="@{/blog/temporary-img/recommended.jpg}" alt="Second slide">
+                                <img class="d-block w-100" src="temporary-img/it2.jpg" th:href="@{/blog/temporary-img/it2.jpg}" alt="Second slide">
                             </div>
                             <div class="carousel-item">
-                                <img class="d-block w-100" src="temporary-img/recommended.jpg" th:href="@{/blog/temporary-img/recommended.jpg}" alt="Third slide">
+                                <img class="d-block w-100" src="temporary-img/it3.jpg" th:href="@{/blog/temporary-img/it3.jpg}" alt="Third slide">
                             </div>
                         </div>
                         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -79,125 +79,92 @@
 
 
                 </div>
-                <div class="recommend-bottom">
-                    <div class="recommend-item">
-                        <a href="calmlog-details.html"><img src="temporary-img/recommended-left.jpg" th:href="@{/blog/temporary-img/recommended-left.jpg}" class="img-fluid" alt=""></a>
-                    </div>
-                    <div class="recommend-item">
-                        <a href="calmlog-details.html"><img src="temporary-img/recommended-right.jpg" class="img-fluid" th:href="@{/blog/temporary-img/recommended-right.jpg}" alt=""></a>
-                    </div>
-                </div>
+<!--                <div class="recommend-bottom">-->
+<!--                    <div class="recommend-item">-->
+<!--                        <a href="calmlog-details.html"><img src="temporary-img/recommended-left.jpg" th:href="@{/blog/temporary-img/recommended-left.jpg}" class="img-fluid" alt=""></a>-->
+<!--                    </div>-->
+<!--                    <div class="recommend-item">-->
+<!--                        <a href="calmlog-details.html"><img src="temporary-img/recommended-right.jpg" class="img-fluid" th:href="@{/blog/temporary-img/recommended-right.jpg}" alt=""></a>-->
+<!--                    </div>-->
+<!--                </div>-->
 
             </div>
 
-            <div class="cl-card">
+<!--            <div class="cl-card">-->
+<!--                <div class="row">-->
+<!--                    <div class="col-lg-3 col-md-4 col-sm-12 cl-card-image"><a href="calmlog-details.html"><img src="temporary-img/list-image2.jpg" class="img-fluid" alt=""></a></div>-->
+<!--                    <div class="col-lg-9 col-md-8 col-sm-12 cl-card-main">-->
+<!--                        <h3 class="cl-card-main-title"><a href="calmlog-details.html">主题换肤设计小结</a></h3>-->
+<!--                        <p class="cl-card-main-info">项目复盘对设计师的成长来说是一件很重要的环节，不仅可以巩固自己的设计理论，同时还可以与小伙伴们分享自己的小心得～</p>-->
+<!--                        <p class="cl-card-more"><a href="calmlog-details.html">阅读更多...</a></p>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+
+            <div class="cl-card" th:each="article:${page.list}">
                 <div class="row">
-                    <div class="col-lg-3 col-md-4 col-sm-12 cl-card-image"><a href="calmlog-details.html"><img src="temporary-img/list-image1.jpg" class="img-fluid" alt=""></a></div>
+<!--                    <div class="col-lg-3 col-md-4 col-sm-12 cl-card-image"><a href="calmlog-details.html"><img src="temporary-img/list-image3.jpg" class="img-fluid" alt=""></a></div>-->
                     <div class="col-lg-9 col-md-8 col-sm-12 cl-card-main">
-                        <h3 class="cl-card-main-title"><a href="calmlog-details.html">光是预览图就呼之欲出!十八分钟后你也会做这样的动感3D~</a></h3>
-                        <p class="cl-card-main-info">本期玩皮兔为您带来的视频翻译是：运用图层样式即可get各种风格的海报文本~！本次教程所用到的所有图片素材，玩皮兔全都有，跟着视频同步学习吧~</p>
-                        <p class="cl-card-more"><a href="calmlog-details.html">阅读更多...</a></p>
+                        <h3 class="cl-card-main-title col-lg-9 col-md-8 col-sm-12"><a href="calmlog-details.html" th:text="${article.title}"></a></h3>
+                        <p class="col-lg-2 col-md-2 col-sm-3" th:text="${article.category}"></p>
+                        <p class="col-lg-7 col-md-6 col-sm-9" th:text="${article.label}"></p>
+                        <p class="col-lg-9"><a th:href="@{/blog/toArticle(id = ${article.id})}">阅读更多...</a></p>
                     </div>
                 </div>
             </div>
 
-            <div class="cl-card">
-                <div class="row">
-                    <div class="col-lg-3 col-md-4 col-sm-12 cl-card-image"><a href="calmlog-details.html"><img src="temporary-img/list-image2.jpg" class="img-fluid" alt=""></a></div>
-                    <div class="col-lg-9 col-md-8 col-sm-12 cl-card-main">
-                        <h3 class="cl-card-main-title"><a href="calmlog-details.html">主题换肤设计小结</a></h3>
-                        <p class="cl-card-main-info">项目复盘对设计师的成长来说是一件很重要的环节，不仅可以巩固自己的设计理论，同时还可以与小伙伴们分享自己的小心得～</p>
-                        <p class="cl-card-more"><a href="calmlog-details.html">阅读更多...</a></p>
-                    </div>
-                </div>
-            </div>
 
-            <div class="cl-card">
-                <div class="row">
-                    <div class="col-lg-3 col-md-4 col-sm-12 cl-card-image"><a href="calmlog-details.html"><img src="temporary-img/list-image3.jpg" class="img-fluid" alt=""></a></div>
-                    <div class="col-lg-9 col-md-8 col-sm-12 cl-card-main">
-                        <h3 class="cl-card-main-title"><a href="calmlog-details.html">那个，摄影师你拍照为什么穿那么少？</a></h3>
-                        <p class="cl-card-main-info">今天打算穿得比较少来见你</p>
-                        <p class="cl-card-more"><a href="calmlog-details.html">阅读更多...</a></p>
-                    </div>
-                </div>
-            </div>
 
-            <div class="cl-card">
-                <div class="row">
-                    <div class="col-lg-3 col-md-4 col-sm-12 cl-card-image"><a href="calmlog-details.html"><img src="temporary-img/list-image1.jpg" class="img-fluid" alt=""></a></div>
-                    <div class="col-lg-9 col-md-8 col-sm-12 cl-card-main">
-                        <h3 class="cl-card-main-title"><a href="calmlog-details.html">光是预览图就呼之欲出!十八分钟后你也会做这样的动感3D~</a></h3>
-                        <p class="cl-card-main-info">本期玩皮兔为您带来的视频翻译是：运用图层样式即可get各种风格的海报文本~！本次教程所用到的所有图片素材，玩皮兔全都有，跟着视频同步学习吧~</p>
-                        <p class="cl-card-more"><a href="calmlog-details.html">阅读更多...</a></p>
-                    </div>
-                </div>
-            </div>
 
-            <div class="cl-card">
-                <div class="row">
-                    <div class="col-lg-3 col-md-4 col-sm-12 cl-card-image"><a href="calmlog-details.html"><img src="temporary-img/list-image2.jpg" class="img-fluid" alt=""></a></div>
-                    <div class="col-lg-9 col-md-8 col-sm-12 cl-card-main">
-                        <h3 class="cl-card-main-title"><a href="calmlog-details.html">主题换肤设计小结</a></h3>
-                        <p class="cl-card-main-info">项目复盘对设计师的成长来说是一件很重要的环节，不仅可以巩固自己的设计理论，同时还可以与小伙伴们分享自己的小心得～</p>
-                        <p class="cl-card-more"><a href="calmlog-details.html">阅读更多...</a></p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="cl-card">
-                <div class="row">
-                    <div class="col-lg-3 col-md-4 col-sm-12 cl-card-image"><a href="calmlog-details.html"><img src="temporary-img/list-image3.jpg" class="img-fluid" alt=""></a></div>
-                    <div class="col-lg-9 col-md-8 col-sm-12 cl-card-main">
-                        <h3 class="cl-card-main-title"><a href="calmlog-details.html">那个，摄影师你拍照为什么穿那么少？</a></h3>
-                        <p class="cl-card-main-info">今天打算穿得比较少来见你</p>
-                        <p class="cl-card-more"><a href="calmlog-details.html">阅读更多...</a></p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="cl-card">
-                <div class="row">
-                    <div class="col-lg-3 col-md-4 col-sm-12 cl-card-image"><a href="calmlog-details.html"><img src="temporary-img/list-image2.jpg" class="img-fluid" alt=""></a></div>
-                    <div class="col-lg-9 col-md-8 col-sm-12 cl-card-main">
-                        <h3 class="cl-card-main-title"><a href="calmlog-details.html">主题换肤设计小结</a></h3>
-                        <p class="cl-card-main-info">项目复盘对设计师的成长来说是一件很重要的环节，不仅可以巩固自己的设计理论，同时还可以与小伙伴们分享自己的小心得～</p>
-                        <p class="cl-card-more"><a href="calmlog-details.html">阅读更多...</a></p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="cl-card">
-                <div class="row">
-                    <div class="col-lg-3 col-md-4 col-sm-12 cl-card-image"><a href="calmlog-details.html"><img src="temporary-img/list-image3.jpg" class="img-fluid" alt=""></a></div>
-                    <div class="col-lg-9 col-md-8 col-sm-12 cl-card-main">
-                        <h3 class="cl-card-main-title"><a href="calmlog-details.html">那个，摄影师你拍照为什么穿那么少？</a></h3>
-                        <p class="cl-card-main-info">今天打算穿得比较少来见你</p>
-                        <p class="cl-card-more"><a href="calmlog-details.html">阅读更多...</a></p>
-                    </div>
-                </div>
-            </div>
 
 
 
             <nav aria-label="Page navigation example">
-                <ul class="pagination justify-content-center">
-                    <li class="page-item disabled">
-                        <a class="page-link" href="#" aria-label="Previous">
-                            <span aria-hidden="true">&laquo;</span>
-                            <span class="sr-only">Previous</span>
-                        </a>
-                    </li>
-                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                    <li class="page-item">
-                        <a class="page-link" href="#" aria-label="Next">
-                            <span aria-hidden="true">&raquo;</span>
-                            <span class="sr-only">Next</span>
-                        </a>
-                    </li>
-                </ul>
+<!--                <ul class="pagination justify-content-center">-->
+<!--                    <li class="page-item disabled">-->
+<!--                        <a class="page-link" href="#" aria-label="Previous">-->
+<!--                            <span aria-hidden="true">&laquo;</span>-->
+<!--                            <span class="sr-only">Previous</span>-->
+<!--                        </a>-->
+<!--                    </li>-->
+<!--                    <li class="page-item active"><a class="page-link" href="#">1</a></li>-->
+<!--                    <li class="page-item"><a class="page-link" href="#">2</a></li>-->
+<!--                    <li class="page-item"><a class="page-link" href="#">3</a></li>-->
+<!--                    <li class="page-item">-->
+<!--                        <a class="page-link" href="#" aria-label="Next">-->
+<!--                            <span aria-hidden="true">&raquo;</span>-->
+<!--                            <span class="sr-only">Next</span>-->
+<!--                        </a>-->
+<!--                    </li>-->
+<!--                </ul>-->
+                <div class="Page navigation">
+                    <div  style="text-align: center">
+                        <!--当前页数小于等于1时，上一页还是显示第一页的信息-->
+                        <div th:if="${page.pageNum} le 1">
+                            <a class="prev" th:href="@{/blog/blogList(pn=1)}">&lt;&lt;</a>
+                            <a class="num" th:href="@{/blog/blogList(pn=${page.pageNum})}">上一页</a>
+                            <span class="current" th:href="@{/blog/blogList(pn=${page.pageNum})}" th:text="${page.pageNum}"></span>
+                            <a class="num" th:if="${page.pageNum} lt ${page.pages}" th:href="@{/blog/blogList(pn=${page.pageNum+1})}">下一页</a>
+                            <a class="next" th:href="@{/blog/blogList(pn=${page.pages})}">&gt;&gt;</a>
+                        </div>
+                        <!--当前页数大于等于最后一页时，点击下一页还是显示最尾页页的信息-->
+                        <div th:if="${page.pageNum} != 1 and ${page.pageNum} ge ${page.pages}">
+                            <a class="prev" th:href="@{/blog/blogList(pn=1)}">&lt;&lt;</a>
+                            <a class="num" th:href="@{/blog/blogList(pn=${page.pageNum-1})}">上一页</a>
+                            <span class="current" th:href="@{/blog/blogList(pn=${page.pageNum})}" th:text="${page.pageNum}"></span>
+                            <a class="num" th:href="@{/blog/blogList(pn=${page.pageNum})}">下一页</a>
+                            <a class="next" th:href="@{/blog/blogList(pn=${page.pages})}">&gt;&gt;</a>
+                        </div>
+                        <!--非首尾页-->
+                        <div th:if="${page.pageNum} gt 1 and ${page.pageNum} lt ${page.pages}">
+                            <a class="prev" th:href="@{/blog/blogList(pn=1)}">&lt;&lt;</a>
+                            <a class="num" th:href="@{/blog/blogList(pn=${page.pageNum-1})}">上一页</a>
+                            <span class="current" th:href="@{/blog/blogList(pn=${page.pageNum})}" th:text="${page.pageNum}"></span>
+                            <a class="num" th:href="@{/blog/blogList(pn=${page.pageNum+1})}">下一页</a>
+                            <a class="next" th:href="@{/blog/blogList(pn=${page.pages})}">&gt;&gt;</a>
+                        </div>
+                    </div>
+                </div>
             </nav>
 
         </div>
@@ -270,5 +237,30 @@
 <script src="bootstrap/js/bootstrap.min.js" th:src="@{/blog/bootstrap/js/bootstrap.min.js}"></script>
 <script src="highlight/highlight.pack.js" th:src="@{/blog/highlight/highlight.pack.js}"></script>
 <script>hljs.initHighlightingOnLoad();</script>
+<script>
+    // function getArticle(obj){
+    //     //拿到元素的value（即id），传给异步删除的请求
+    //     var id = obj.getAttribute('value');
+    //     console.log("///////////////////////////////////////////////"+id);
+    //     $.ajax({
+    //         type: 'GET',
+    //         url: "/blog/toArticle",
+    //         data: {'id':id},
+    //     });
+    //     layer.msg('已转换', {icon: 1, time: 1000});
+        // layer.confirm('确认要删除吗？', function (index) {
+        //     //发异步删除数据
+        //     $(obj).parents("tr").remove();
+        //     //在确认删除后，发送删除请求
+        //     $.ajax({
+        //         type: 'GET',
+        //         url: "/article/deleteArticle",
+        //         data: {'id':id},
+        //     });
+        //     layer.msg('已删除!', {icon: 1, time: 1000});
+        // });
+
+    // }
+</script>
 </body>
 </html>
