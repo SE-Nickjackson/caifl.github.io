@@ -11,10 +11,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * @describtion: 首页登录Controller类
  **/
 @Controller
-@RequestMapping("/blog")
-public class PageControlller {
+@RequestMapping({"/", "", "/index"})
+public class IndexControlller {
 
-    @RequestMapping({"","/","/index"})
+    @RequestMapping({"","/"})
     public String  index(){
         return "index";
     }

@@ -36,8 +36,8 @@ public class BlogController {
     private CategoryService categoryService;
 
 
-    @GetMapping("blogList")
-    public String blogList(Model model, @RequestParam(value = "pn", defaultValue = "1") int pn, @RequestParam(value = "size", defaultValue = "6") int size) {
+    @GetMapping({"", "blog"})
+    public String blog(Model model, @RequestParam(value = "pn", defaultValue = "1") int pn, @RequestParam(value = "size", defaultValue = "6") int size) {
         PageHelper.startPage(pn, size);
         List<Article> articles = articleService.queryArticles();
         PageInfo<Article> page = new PageInfo<>(articles);
@@ -45,8 +45,14 @@ public class BlogController {
         return "blog-index";
     }
 
-    @RequestMapping("/blog-list")
-    public String blogList(){
+
+
+    @RequestMapping("/blogList")
+    public String blogList(Model model, @RequestParam(value = "pn", defaultValue = "1") int pn, @RequestParam(value = "size", defaultValue = "6") int size){
+        PageHelper.startPage(pn, size);
+        List<Article> articles = articleService.queryArticles();
+        PageInfo<Article> page = new PageInfo<>(articles);
+        model.addAttribute("page", page);
         return "blog-list";
     }
 
